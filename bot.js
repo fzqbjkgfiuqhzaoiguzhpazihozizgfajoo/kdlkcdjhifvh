@@ -9,6 +9,15 @@ const ytdl = require('ytdl-core');
 const client = new Discord.Client({disableEveryone: true});
 const prefix = "2";
 
+
+
+client.on('ready' , () => {
+    console.log('Online.');
+client.user.setActivity('2play - Oreo Server', {type: 'LISTENING' });
+});
+
+
+
 client.on('message', async msg => { 
 	if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
