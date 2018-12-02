@@ -18,6 +18,12 @@ client.user.setActivity('2play - Oreo Server', {type: 'LISTENING' });
 
 
 
+client.on("error", function(err) {
+ return console.log(err);
+});
+
+
+
 client.on('message', async msg => { 
 	if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
